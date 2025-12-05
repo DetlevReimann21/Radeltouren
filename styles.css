@@ -1,0 +1,43 @@
+.centered {
+            text-align: center;
+}
+.large {
+  font-size: large;
+}
+.medium {
+  font-size: medium;
+}
+.small {
+  font-size: small;
+}
+.blauFett {
+  color: blue;      /* Textfarbe */
+  font-weight: bold;  /* Schriftstärke */
+ } 
+ .textblock {
+    margin-left: 50px; /* Außenabstand links */
+    margin-right: 50px; /* Außenabstand rechts */
+}
+           /*.Navigations-Layout {*/
+           /* style  copied from index.html*/
+nav {
+  background-color: #eeeeeea6;
+  padding: 20px;
+}
+
+nav a {
+  margin-right: 50px;
+  text-decoration: none;
+  color: #333;
+}
+nav a:hover {
+  text-decoration: underline;
+  color: darkblue;
+}
+        /* /style copied from index.html*/
+
+.custom-alert {   /* Gestaltung des Alerts */
+  width: 500px;   /* feste Breite */
+  margin: 20px auto; /* oben/unten 20px, links/rechts automatisch → zentriert */
+  text-align: center;
+}
