@@ -19,13 +19,13 @@ END:DAYLIGHT
 END:VTIMEZONE
 
 BEGIN:VEVENT
-UID:radtour-hienheim-1402026
+UID:radtour-Vorwald-06092026
 DTSTAMP;TZID=Europe/Berlin:20260116T090000
-DTSTART;TZID=Europe/Berlin:20260514T083000
-DTEND;TZID=Europe/Berlin:20260514T180000
-SUMMARY:Radtour Hienheim – Riedenburg – Altmannstein
-DESCRIPTION:Geführte Radtour über Hienheim, Felsenhäusl, Riedenburg, Schambachtal.
-LOCATION:Pentling, Hölkeringer Str., Parkplatz V-Markt
+DTSTART;TZID=Europe/Berlin:20260906T090000
+DTEND;TZID=Europe/Berlin:20260906T190000
+SUMMARY:Radtour Schneitweg – Jugenberg – Nittenau - Hauzendorf
+DESCRIPTION:Geführte Radtour von Regensburg über Schneitweg, Grafenwinn, Nittenau und Hauzendorf.
+LOCATION:Parkplatz Donauarena
 END:VEVENT
 
 END:VCALENDAR

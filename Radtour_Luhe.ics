@@ -19,13 +19,13 @@ END:DAYLIGHT
 END:VTIMEZONE
 
 BEGIN:VEVENT
-UID:radtour-hienheim-1402026
+UID:radtour-Luhe-07062026
 DTSTAMP;TZID=Europe/Berlin:20260116T090000
-DTSTART;TZID=Europe/Berlin:20260514T083000
-DTEND;TZID=Europe/Berlin:20260514T180000
-SUMMARY:Radtour Hienheim – Riedenburg – Altmannstein
-DESCRIPTION:Geführte Radtour über Hienheim, Felsenhäusl, Riedenburg, Schambachtal.
-LOCATION:Pentling, Hölkeringer Str., Parkplatz V-Markt
+DTSTART;TZID=Europe/Berlin:20260607T073000
+DTEND;TZID=Europe/Berlin:20260607T190000
+SUMMARY:Radtour Luhe – Trausnitz – Vohenstrauß - Burgmühle
+DESCRIPTION:Geführte Radtour von Luhe über Trausnitz, Vohenstrauß und Burgmühle.
+LOCATION:Pendler Parkplatz Lappersdorfer Kreisel
 END:VEVENT
 
 END:VCALENDAR
