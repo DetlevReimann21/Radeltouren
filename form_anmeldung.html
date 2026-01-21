@@ -28,14 +28,14 @@
     </label>
     <p> Ich benötige eine Mitfahrgelegenheit</p>
     <label>für meine Person:
-        <select id="für mein E-Bike" required>
+        <select id="Person" required>
             <option value="">zutreffendes auswählen</option>
             <option value="nein">nein</option>
             <option value="ja">ja</option>
         </select>
     </label>
 
-    <label>ffür mein E-Bike:
+    <label>für mein E-Bike:
         <select id="E-Bike" required>
             <option value="">zutreffendes auswählen</option>
             <option value="nein">nein</option>
@@ -44,7 +44,7 @@
     </label>
 
     <label>für mein unmotorisiertes Fahrrad:
-        <select id="unmotorisertes Fahrrad" required>
+        <select id="unmotorisertesFahrrad" required>
             <option value="">zutreffendes auswählen</option>
             <option value="nein">nein</option>
             <option value="ja">ja</option>
@@ -72,7 +72,7 @@ function getDateiname() {
 }
 
 function absenden() {
-    const felder = ["vorname", "nachname", "email", "helm", "erfahrung", "gesundheit"];
+    const felder = ["vorname", "nachname", "email", "Person", "E-Bike", "unmotorisiertesFahrrad"];
 
     for (let id of felder) {
         const feld = document.getElementById(id);
@@ -90,9 +90,9 @@ function absenden() {
         Vorname: document.getElementById("vorname").value,
         Nachname: document.getElementById("nachname").value,
         Email: document.getElementById("email").value,
-        Helm: document.getElementById("helm").value,
-        Erfahrung: document.getElementById("erfahrung").value,
-        Gesundheit: document.getElementById("gesundheit").value,
+        Person: document.getElementById("helm").value,
+        E-Bike: document.getElementById("erfahrung").value,
+        unmotorisiertesFahrrad: document.getElementById("gesundheit").value,
         Zeitstempel: new Date().toLocaleString()
     };
 
@@ -104,7 +104,7 @@ function absenden() {
     link.click();
 
     // E-Mail öffnen
-    window.location.href = "mailto:detlev.reimann@web.de?subject=Neue Anmeldung&body=Eine neue Anmeldung wurde gespeichert.";
+    window.location.href = "mailto:detlev.reimann@t-online.de?subject=Neue Anmeldung&body=Eine neue Anmeldung wurde gespeichert.";
 }
 </script>
 
