@@ -57,36 +57,7 @@
 </form>
 
 <script>
-// Mail aus URL übernehmen
-function getMailto() {
-    const params = new URLSearchParams(window.location.search);
-
-    const mail = params.get("mail") || "Reimann_Detlev@t-online.de";
-    const subject = params.get("subject") || "Anmeldung zur Radtour";
-    const body = params.get("body") || "Hallo Herr Reimann,\n\nich möchte mich zur Tour anmelden.";
-
-    return "mailto:" + mail
-        + "?subject=" + encodeURIComponent(subject)
-        + "&body=" + encodeURIComponent(body);
-}
-
-// Dateiname anhand der Ursprungsseite
-function getDateiname() {
-    const ref = document.referrer;
-
-    if (ref.includes("page2_hienheim1402026.html"))
-        return "page2_hienheim14052026_Teilnehmerliste.xlsx";
-
-    if (ref.includes("page3_luhe07062026.html"))
-        return "page3_luhe07062026_Teilnehmerliste.xlsx";
-
-    if (ref.includes("page4_Nittenau06092026.html"))
-        return "page4_Nittenau06092026_Teilnehmerliste.xlsx";
-
-    return "Teilnehmerliste.xlsx";
-}
-
-function absenden() {
+async function absenden() {
     const felder = ["vorname", "nachname", "email", "Person", "EBike", "unmotorisiertesFahrrad"];
 
     for (let id of felder) {
@@ -98,30 +69,38 @@ function absenden() {
         }
     }
 
-    const dateiname = getDateiname();
-
-    // Daten sammeln
     const daten = {
         Vorname: document.getElementById("vorname").value,
         Nachname: document.getElementById("nachname").value,
         Email: document.getElementById("email").value,
         Person: document.getElementById("Person").value,
         EBike: document.getElementById("EBike").value,
-        unmotorisiertesFahrrad: document.getElementById("unmotorisiertesFahrrad").value,
-        Zeitstempel: new Date().toLocaleString()
+        unmotorisiertesFahrrad: document.getElementById("unmotorisiertesFahrrad").value
     };
 
-    // JSON speichern
-    const blob = new Blob([JSON.stringify(daten, null, 2)], { type: "application/json" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = dateiname.replace(".xlsx", ".json");
-    link.click();
+    // HIER DEINE GOOGLE-WEBAPP-URL EINSETZEN
+    const url = "https://script.google.com/macros/s/AKfycbw0kew9uuNMt-GetPzNnTptUXI_hQm0LHPxLETj379vkMXMHKC5sS3zmZ6BtmQ2FTRU/exec";
 
-    // Mail öffnen
-    window.location.href = getMailto();
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(daten)
+        });
+
+
+        if (response.ok) {
+            alert("Vielen Dank! Ihre Anmeldung wurde erfolgreich übermittelt.");
+            window.location.href = "index.html";
+        } else {
+            alert("Fehler beim Senden der Anmeldung.");
+        }
+    } catch (error) {
+        alert("Netzwerkfehler: " + error);
+    }
 }
 </script>
 
 </body>
 </html>
+
